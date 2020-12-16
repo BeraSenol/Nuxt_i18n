@@ -1,89 +1,154 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
+  <div>
+    <!-- Header -->
+    <header id="header">
+      <div class="inner">
+        <a href="index.html" class="logo"
+          ><strong>Projection</strong> by TEMPLATED</a
+        >
+        <nav id="nav">
+          <nuxt-link :to="localePath('/')">{{ $t("header.home") }}</nuxt-link>
+          <nuxt-link :to="localePath('generic')">{{ $t("header.generic") }}</nuxt-link>
+          <nuxt-link :to="localePath('elements')">{{ $t("header.elements") }}</nuxt-link>
+        </nav>
+        <a href="#navPanel" class="navPanelToggle"
+          ><span class="fa fa-bars"></span
+        ></a>
       </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+    </header>
+
+    <!-- Banner -->
+    <section id="banner">
+      <div class="inner">
+        <header>
+          <h1>{{ $t("banner.welcome") }}</h1>
+        </header>
+
+        <div class="flex">
+          <div>
+            <span class="fa fa-car fa-2x" style="color: #6cc091"></span>
+            <h3>Aliquam</h3>
+            <p>Suspendisse amet ullamco</p>
           </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+
+          <div>
+            <span class="fa fa-camera fa-2x" style="color: #6cc091"></span>
+            <h3>Elementum</h3>
+            <p>Class aptent taciti ad litora</p>
+          </div>
+
+          <div>
+            <span class="fa fa-bug fa-2x" style="color: #6cc091"></span>
+            <h3>Ultrices</h3>
+            <p>Nulla vitae mauris non felis</p>
+          </div>
+        </div>
+
+        <footer>
+          <a href="#" class="button">{{ $t("banner.get_started") }}</a>
+        </footer>
+      </div>
+    </section>
+    <!-- Three -->
+    <section id="three" class="wrapper align-center">
+      <div class="inner">
+        <div class="flex flex-2">
+          <article>
+            <div class="image round">
+              <img src="~/assets/images/pic01.jpg" alt="Pic 01" />
+            </div>
+            <header>
+              <h3>
+                Lorem ipsum<br />
+                dolor amet nullam
+              </h3>
+            </header>
+            <p>
+              Morbi in sem quis dui placerat ornare. Pellentesquenisi<br />euismod
+              in, pharetra a, ultricies in diam sed arcu. Cras<br />consequat
+              egestas augue vulputate.
+            </p>
+            <footer>
+              <a href="#" class="button">{{ $t("three.learn_more") }}</a>
+            </footer>
+          </article>
+          <article>
+            <div class="image round">
+              <img src="~/assets/images/pic02.jpg" alt="Pic 02" />
+            </div>
+            <header>
+              <h3>
+                Sed feugiat<br />
+                tempus adipicsing
+              </h3>
+            </header>
+            <p>
+              Pellentesque fermentum dolor. Aliquam quam lectus<br />facilisis
+              auctor, ultrices ut, elementum vulputate, nunc<br />
+              blandit ellenste egestagus commodo.
+            </p>
+            <footer>
+              <a href="#" class="button">{{ $t("three.learn_more") }}</a>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <h3>{{ $t("footer.get_in_touch") }}</h3>
+
+        <form action="#" method="post">
+          <div class="field half first">
+            <label for="name">{{ $t("footer.name") }}</label>
+            <input name="name" id="name" type="text" />
+          </div>
+          <div class="field half">
+            <label for="email">{{ $t("footer.email") }}</label>
+            <input name="email" id="email" type="email" />
+          </div>
+          <div class="field">
+            <label for="message">{{ $t("footer.message") }}</label>
+            <textarea
+              name="message"
+              id="message"
+              rows="6"
+              style="border: solid 2px #8dcca9"
+            ></textarea>
+          </div>
+          <ul class="actions">
+            <li>
+              <input value="Send Message" class="button alt" type="submit" />
+            </li>
+          </ul>
+        </form>
+
+        <div class="copyright">
+          &copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>.
+          Images: <a href="https://unsplash.com">Unsplash</a>.
+        </div>
+      </div>
+      <v-col>
+        <v-row justify="space-around">
+          <v-container>
+            <v-btn  @click="$i18n.setLocale('nl')">
+              {{ $t("languages.nl") }}
+            </v-btn>
+          </v-container>
+          <v-container>
+            <v-btn @click="$i18n.setLocale('en')">
+              {{ $t("languages.en") }}
+            </v-btn>
+          </v-container>
+        </v-row>
+      </v-col>
+    </footer>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
-}
+
+};
 </script>
