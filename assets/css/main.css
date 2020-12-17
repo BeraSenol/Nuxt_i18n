@@ -2649,7 +2649,7 @@ button:disabled,
     text-align: right;
     top: 2em;
     width: 100%;
-    z-index: 10001;
+    z-index: 1;
 }
 
 #header .inner {
@@ -2706,12 +2706,6 @@ button:disabled,
 
 #header a.navPanelToggle .fa {
     font-size: 1.25em;
-}
-
-@media screen and (max-width: 980px) {
-    #header a.navPanelToggle {
-        display: inline-block;
-    }
 }
 
 @media screen and (max-width: 736px) {
@@ -2811,7 +2805,6 @@ button:disabled,
     right: 0;
     text-align: right;
     top: 0;
-    vertical-align: middle;
     width: 5em;
 }
 
@@ -2864,7 +2857,6 @@ button:disabled,
 #banner .inner {
     border-top: 2px solid rgba(255, 255, 255, 0.2);
     position: relative;
-    z-index: 10005;
     padding-top: 8em;
 }
 

@@ -1,23 +1,58 @@
 <template>
   <div>
-    <!-- Header -->
     <header id="header">
       <div class="inner">
-        <a href="index.html" class="logo"
-          ><strong>Projection</strong> by TEMPLATED</a
-        >
+        <nuxt-link :to="localePath('/')" class="logo">
+          <strong>Projection</strong> by TEMPLATED
+        </nuxt-link>
         <nav id="nav">
-          <nuxt-link :to="localePath('/')">{{ $t("header.home") }}</nuxt-link>
-          <nuxt-link :to="localePath('generic')">{{ $t("header.generic") }}</nuxt-link>
-          <nuxt-link :to="localePath('elements')">{{ $t("header.elements") }}</nuxt-link>
+          <nuxt-link :to="localePath('/')">
+            {{ $t("header.home") }}
+          </nuxt-link>
+          <nuxt-link :to="localePath('generic')">
+            {{ $t("header.generic") }}
+          </nuxt-link>
+          <nuxt-link :to="localePath('elements')">
+            {{ $t("header.elements") }}
+          </nuxt-link>
         </nav>
-        <a href="#navPanel" class="navPanelToggle"
-          ><span class="fa fa-bars"></span
-        ></a>
+        <v-app-bar-nav-icon id="mobileNavIcon" @click="drawerRight = !drawerRight"/>
+        
       </div>
     </header>
+    <v-navigation-drawer v-model="drawerRight" :clipped="clipped" fixed temporary right app>
+      <v-list flat nav>
+        <!-- Home -->
+        <v-list-item :to="localePath('/')">
+          <v-list-item-action>
+            <v-icon> mdi-home </v-icon>
+          </v-list-item-action>
+          <v-list-item-title> {{ $t("header.home") }} </v-list-item-title>
+        </v-list-item>
 
-    <!-- Banner -->
+        <!-- Generic -->
+        <v-list-item :to="localePath('generic')">
+          <v-list-item-action>
+            <v-icon> mdi-account-box </v-icon>
+          </v-list-item-action>
+          <v-list-item-title>
+            {{ $t("header.generic") }}
+          </v-list-item-title>
+        </v-list-item>
+
+        <!-- Elements -->
+        <v-list-item :to="localePath('elements')">
+          <v-list-item-action>
+            <v-icon> mdi-code-tags </v-icon>
+          </v-list-item-action>
+          <v-list-item-title>
+            {{ $t("header.elements") }}
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <!-- Section -->
     <section id="banner">
       <div class="inner">
         <header>
@@ -26,29 +61,30 @@
 
         <div class="flex">
           <div>
-            <span class="fa fa-car fa-2x" style="color: #6cc091"></span>
+            <span class="fa fa-2x fa-car" style="color: #6cc091"></span>
             <h3>Aliquam</h3>
             <p>Suspendisse amet ullamco</p>
           </div>
 
           <div>
-            <span class="fa fa-camera fa-2x" style="color: #6cc091"></span>
+            <span class="fa fa-2x fa-camera" style="color: #6cc091"></span>
             <h3>Elementum</h3>
             <p>Class aptent taciti ad litora</p>
           </div>
 
           <div>
-            <span class="fa fa-bug fa-2x" style="color: #6cc091"></span>
+            <span class="fa fa-2x fa-bug" style="color: #6cc091"></span>
             <h3>Ultrices</h3>
             <p>Nulla vitae mauris non felis</p>
           </div>
         </div>
 
         <footer>
-          <a href="#" class="button">{{ $t("banner.get_started") }}</a>
+          <a href="#" class="button">Get Started</a>
         </footer>
       </div>
     </section>
+
     <!-- Three -->
     <section id="three" class="wrapper align-center">
       <div class="inner">
@@ -94,6 +130,7 @@
         </div>
       </div>
     </section>
+
     <!-- Footer -->
     <footer id="footer">
       <div class="inner">
@@ -132,7 +169,7 @@
       <v-col>
         <v-row justify="space-around">
           <v-container>
-            <v-btn  @click="$i18n.setLocale('nl')">
+            <v-btn @click="$i18n.setLocale('nl')">
               {{ $t("languages.nl") }}
             </v-btn>
           </v-container>
@@ -149,6 +186,22 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      clipped: true,
+      drawerRight: false,
+      right: true,
+      fixed: true,
+    };
+  },
 };
 </script>
+
+<style scoped>
+
+@media screen and (min-width: 981px) {
+  #mobileNavIcon {
+    display: none;
+  }
+}
+</style>
