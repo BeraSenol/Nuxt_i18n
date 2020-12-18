@@ -27,6 +27,27 @@ $ npm install nuxt-i18n
   i18n: {}
 }
 
+# i18n locales config
+i18n: {
+    locales: ["en", "nl"]
+}
+
+# i18n config options:
+# "locales" sets all available locales
+i18n: {
+    locales: ["en", "nl"]
+}
+
+# "defaultLocale sets the default locale"
+i18n: {
+    DefaultLocale: "en"
+}
+
+# "strategy" sets the url strategy, more info: [Nuxt.js/Strategy](https://i18n.nuxtjs.org/options-reference#strategy)
+i18n: {
+    strategy: "prefix"
+}
+
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
