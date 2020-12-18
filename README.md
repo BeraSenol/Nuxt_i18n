@@ -2,6 +2,8 @@
 
 ## Build Setup
 
+More info: [Nuxt.js docs](https://nuxtjs.org).
+
 ```bash
 # install dependencies
 $ npm install
@@ -18,7 +20,11 @@ $ npm run generate
 
 # installion i18n
 $ npm install nuxt-i18n
+```
 
+## i18n Configuration
+[Nuxt.js/i18n Setup](https://i18n.nuxtjs.org/setup)
+```bash
 # add nuxt-i18n and i18n to the modules section of nuxt.config.js
 {
   modules: [
@@ -44,11 +50,7 @@ i18n: {
 }
 
 # "strategy" sets the url strategy, more info:
-[Nuxt.js/Strategy](https://i18n.nuxtjs.org/options-reference#strategy)
 i18n: {
     strategy: "prefix"
 }
-
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
