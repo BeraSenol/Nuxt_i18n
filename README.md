@@ -43,7 +43,8 @@ i18n: {
     DefaultLocale: "en"
 }
 
-# "strategy" sets the url strategy, more info: [Nuxt.js/Strategy](https://i18n.nuxtjs.org/options-reference#strategy)
+# "strategy" sets the url strategy, more info:
+[Nuxt.js/Strategy](https://i18n.nuxtjs.org/options-reference#strategy)
 i18n: {
     strategy: "prefix"
 }
