@@ -31,10 +31,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.marginLR {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-</style>

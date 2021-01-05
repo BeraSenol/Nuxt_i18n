@@ -23,7 +23,9 @@ $ npm install nuxt-i18n
 ```
 
 ## i18n Configuration
-[Nuxt.js/i18n Setup](https://i18n.nuxtjs.org/setup)
+
+More info: [Nuxt.js/i18n Setup](https://i18n.nuxtjs.org/setup)
+
 ```bash
 # add nuxt-i18n and i18n to the modules section of nuxt.config.js
 {
@@ -44,13 +46,48 @@ i18n: {
     locales: ["en", "nl"]
 }
 
-# "defaultLocale sets the default locale"
+# "defaultLocale" sets the default locale
 i18n: {
     DefaultLocale: "en"
 }
 
-# "strategy" sets the url strategy, more info:
+# "strategy" sets the url strategy (prefix makes the url always contain the current locale like "localhost:3000/en")
 i18n: {
     strategy: "prefix"
 }
+```
+
+# i18n Usage
+
+More info: [Nuxt.js/i18n Basic Usage](https://i18n.nuxtjs.org/basic-usage)
+
+```bash
+# example (nuxt.config.js):
+i18n: {
+    locales: ['en', 'nl'],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'nl',
+      messages: {
+        en: {
+          welcome: 'Welcome'
+        },
+        nl: {
+          welcome: 'Welkom'
+        }
+      }
+    }
+  }
+
+# example (index.vue)
+<h1>{{ $t("welcome") }}</h1>
+
+# Nuxt-link locale routing
+<nuxt-link :to="localePath('index')">Home</nuxt-link>
+//Or
+<nuxt-link :to="localePath('/')">Home</nuxt-link>
+
+# Nuxt-link locale switching
+<nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
+<nuxt-link :to="switchLocalePath('nl')">Dutch</nuxt-link>
 ```

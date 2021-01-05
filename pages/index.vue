@@ -136,7 +136,7 @@
       <div class="inner">
         <h3>{{ $t("footer.get_in_touch") }}</h3>
 
-        <form action="#" method="post">
+        <form name="contact_form" action="#" method="post" data-netlify="true">
           <div class="field half first">
             <label for="name">{{ $t("footer.name") }}</label>
             <input name="name" id="name" type="text" />
