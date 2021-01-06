@@ -16,11 +16,20 @@
             {{ $t("header.elements") }}
           </nuxt-link>
         </nav>
-        <v-app-bar-nav-icon id="mobileNavIcon" @click="drawerRight = !drawerRight"/>
-        
+        <v-app-bar-nav-icon
+          id="mobileNavIcon"
+          @click="drawerRight = !drawerRight"
+        />
       </div>
     </header>
-    <v-navigation-drawer v-model="drawerRight" :clipped="clipped" fixed temporary right app>
+    <v-navigation-drawer
+      v-model="drawerRight"
+      :clipped="clipped"
+      fixed
+      temporary
+      right
+      app
+    >
       <v-list flat nav>
         <!-- Home -->
         <v-list-item :to="localePath('/')">
@@ -155,9 +164,9 @@
               style="border: solid 2px #8dcca9"
             ></textarea>
           </div>
-          <ul>
+          <ul class="actions">
             <li>
-              <button type="submit">Submit</button>
+              <input value="Send Message" class="button alt" type="submit" />
             </li>
           </ul>
         </form>
@@ -183,7 +192,7 @@
       </v-col>
     </footer>
     <form name="test" id="test" method="POST" data-netlify="true">
-       <button value="Send Message" type="submit" />
+      <button value="Send Message" type="submit" />
     </form>
   </div>
 </template>
@@ -202,7 +211,6 @@ export default {
 </script>
 
 <style scoped>
-
 @media screen and (min-width: 981px) {
   #mobileNavIcon {
     display: none;
