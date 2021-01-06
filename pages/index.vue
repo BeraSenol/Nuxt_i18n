@@ -156,7 +156,7 @@
           </div>
           <ul>
             <li>
-              <input value="Send Message" type="submit" />
+              <button value="Send Message" type="submit" />
             </li>
           </ul>
         </form>
