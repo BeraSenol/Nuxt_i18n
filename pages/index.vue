@@ -181,7 +181,7 @@
         </v-row>
       </v-col>
     </footer>
-    <form name="test" method="POST" data-netlify="true">
+    <form name="test" id="test" method="POST" data-netlify="true">
        <button value="Send Message" type="submit" />
     </form>
   </div>
@@ -198,6 +198,9 @@ export default {
     };
   },
 };
+document.getElementById("test").addEventListener("click", function(event){
+  event.preventDefault()
+});
 </script>
 
 <style scoped>
