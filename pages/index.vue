@@ -191,9 +191,6 @@
         </v-row>
       </v-col>
     </footer>
-    <form name="test" id="test" method="POST" data-netlify="true">
-      <button value="Send Message" type="submit" />
-    </form>
   </div>
 </template>
 
