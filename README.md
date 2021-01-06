@@ -70,10 +70,14 @@ i18n: {
       fallbackLocale: 'nl',
       messages: {
         en: {
-          welcome: 'Welcome'
+          welcome: 'Welcome',
+          english: 'English',
+          dutch: 'Dutch'
         },
         nl: {
-          welcome: 'Welkom'
+          welcome: 'Welkom',
+          english: 'Engels',
+          dutch: 'Nederlands'
         }
       }
     }
@@ -88,6 +92,6 @@ i18n: {
 <nuxt-link :to="localePath('/')">Home</nuxt-link>
 
 # Nuxt-link locale switching
-<nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
-<nuxt-link :to="switchLocalePath('nl')">Dutch</nuxt-link>
+<nuxt-link :to="switchLocalePath('en')"> {{ $t("english") }} </nuxt-link>
+<nuxt-link :to="switchLocalePath('nl')"> {{ $t("dutch") }} </nuxt-link>
 ```
