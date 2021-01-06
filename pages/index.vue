@@ -198,9 +198,6 @@ export default {
     };
   },
 };
-document.getElementById("test").addEventListener("click", function(event){
-  event.preventDefault()
-});
 </script>
 
 <style scoped>
