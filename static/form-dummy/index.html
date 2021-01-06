@@ -1,0 +1,19 @@
+<form name="contact" method="POST" data-netlify="true">
+    <div class="field half first">
+        <label for="name">{{ $t("footer.name") }}</label>
+        <input name="name" id="name" type="text" />
+    </div>
+    <div class="field half">
+        <label for="email">{{ $t("footer.email") }}</label>
+        <input name="email" id="email" type="email" />
+    </div>
+    <div class="field">
+        <label for="message">{{ $t("footer.message") }}</label>
+        <textarea name="message" id="message" rows="6" style="border: solid 2px #8dcca9"></textarea>
+    </div>
+    <ul>
+        <li>
+            <button type="submit">Submit</button>
+        </li>
+    </ul>
+</form>
