@@ -136,7 +136,7 @@
       <div class="inner">
         <h3>{{ $t("footer.get_in_touch") }}</h3>
 
-        <form name="contact" method="post" data-netlify="true">
+        <form name="contact" method="POST" data-netlify="true">
           <div class="field half first">
             <label for="name">{{ $t("footer.name") }}</label>
             <input name="name" id="name" type="text" />
@@ -154,7 +154,7 @@
               style="border: solid 2px #8dcca9"
             ></textarea>
           </div>
-          <ul class="actions">
+          <ul>
             <li>
               <input value="Send Message" class="button alt" type="submit" />
             </li>
