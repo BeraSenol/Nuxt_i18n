@@ -146,14 +146,14 @@
         <h3>{{ $t("footer.get_in_touch") }}</h3>
 
         <form name="contact" method="POST">
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="contact" required/>
           <div class="field half first">
             <label for="name">{{ $t("footer.name") }}</label>
             <input name="name" id="name" type="text" />
           </div>
           <div class="field half">
             <label for="email">{{ $t("footer.email") }}</label>
-            <input name="email" id="email" type="email" />
+            <input name="email" id="email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}"/>
           </div>
           <div class="field">
             <label for="message">{{ $t("footer.message") }}</label>
